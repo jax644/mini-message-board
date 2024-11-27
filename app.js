@@ -8,6 +8,9 @@ const path = require('path')
 // Set up app to get URL encoded data from our form
 app.use(express.urlencoded({ extended: true }));
 
+// Set up app to automatically serve static files in the public directory
+app.use(express.static('public'));
+
 // Set view engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')

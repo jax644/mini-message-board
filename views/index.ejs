@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title><%= title %></title>
 </head>
 <body>
-    <% for (let i=0; i<messages.length; i++) { %>
+    <div class="flex-container">
         <div>
-            <p><strong>User: </strong><%= messages[i].user %></p>
-            <p><strong>Message: </strong><%= messages[i].text %></p>
-            <p><strong>Added: </strong><%= messages[i].added.toLocaleString() %></p>
+            <% for (let i=0; i<messages.length; i++) { %>
+                <div class="flex-container">
+                    <div>
+                        <p><strong>User: </strong><%= messages[i].user %></p>
+                        <p><strong>Message: </strong><%= messages[i].text %></p>
+                        <p><strong>Added: </strong><%= messages[i].added.toLocaleString() %></p>
+                    </div>
+                    <div>
+                        <button>Open</button>
+                    </div>
+                </div>
+                <hr>
+            <% } %>
         </div>
-        <hr>
-    <% } %>
+        <div>
+            <button>
+                <a href="/new">Send your own message</a>
+            </button>
+        </div>
+    </div>
 </body>
 </html>
